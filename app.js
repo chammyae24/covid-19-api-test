@@ -109,4 +109,8 @@ function showError(v) {
 
 const refreshbtn = document.querySelector(".refresh");
 
-// refreshbtn.addEventListener("click", document.location.reload());
+refreshbtn.addEventListener("click", () => {
+  setTimeout(() => {
+    document.location.reload(true);
+  }, 1000);
+});
