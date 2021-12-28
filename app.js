@@ -69,6 +69,12 @@ function addData(country) {
   totalRecovered.textContent = "Total Recovered: " + country.TotalRecovered;
   totalDeaths.textContent = "Total Deaths" + country.TotalDeaths;
   date.textContent = "Date: " + country.Date;
+
+  const deleteBtns = document.querySelectorAll(".delete");
+
+  deleteBtns.forEach(btn =>
+    btn.addEventListener("click", e => e.target.parentElement.remove())
+  );
 }
 
 function addDataGolbal() {
