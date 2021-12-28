@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <d-flex class="d-flex justify-content-center">
+        <div class="card global mt-3" style="width: 50rem">
+          <img src="./world-map.png" alt="" class="card-img-top" />
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p class="card-text total-confirmed"></p>
+                <p class="card-text total-recovered"></p>
+              </div>
+              <div class="col-md-6">
+                <p class="card-text total-deaths"></p>
+                <p class="card-text new-deaths"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </d-flex>
+
+      <div class="d-flex justify-content-center">
+        <form
+          class="form py-5 d-flex justify-content-center"
+          style="width: 25rem"
+        >
+          <input
+            class="country py-2 px-3 mx-1 form-control border-warning"
+            type="text"
+            placeholder="type Country name"
+          />
+          <input
+            class="btn btn-warning find py-2 px-3 mx-1"
+            type="submit"
+            value="Find"
+          />
+          <button class="btn btn-warning refresh">Refresh</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="alert-show"></div>
+      <div class="card-container row"></div>
+    </div>
+
+    <template class="success">
+      <div class="col-xl-3 col-lg-4 col-md-6 py-3">
+        <div class="card bg-dark text-white shadow">
+          <img src="" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title fw-bold country-name"></h5>
+            <p class="card-text total-confirmed"></p>
+            <p class="card-text total-recovered"></p>
+            <p class="card-text total-deaths"></p>
+            <p class="card-text text-muted date"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template class="fail">
+      <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <svg
+          class="bi flex-shrink-0 me-2"
+          width="24"
+          height="24"
+          role="img"
+          aria-label="Danger:"
+        >
+          <use xlink:href="#exclamation-triangle-fill" />
+        </svg>
+        <div class="fail-text"></div>
+      </div>
+    </template>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
