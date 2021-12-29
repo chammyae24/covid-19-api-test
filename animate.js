@@ -7,7 +7,7 @@ function animationStart() {
 
     setTimeout(() => {
       anime.style.transform = "scale(1)";
-    }, 200);
+    });
   });
 }
 
