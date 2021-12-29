@@ -44,7 +44,10 @@ function showCard(e) {
         showError(value);
       }
     })
-    .catch(() => showError(value));
+    .catch(err => {
+      showError(value);
+      console.error(err);
+    });
 
   inputCountry.value = "";
 }
@@ -60,7 +63,13 @@ function addData(country) {
   const totalDeaths = clone.querySelector(".total-deaths");
   const date = clone.querySelector(".date");
 
-  cardContainer.appendChild(clone);
+  if (cardContainer.childElementCount > 0) {
+    cardContainer.insertBefore(clone, cardContainer.firstChild);
+    animationStart();
+  } else {
+    cardContainer.appendChild(clone);
+    animationStart();
+  }
 
   cardImg.src = `https://flagcdn.com/${country.CountryCode.toLowerCase()}.svg`;
 
@@ -73,7 +82,13 @@ function addData(country) {
   const deleteBtns = document.querySelectorAll(".delete");
 
   deleteBtns.forEach(btn =>
-    btn.addEventListener("click", e => e.target.parentElement.remove())
+    btn.addEventListener("click", e => {
+      const targetCard = e.target.parentElement;
+      targetCard.classList.remove("animation");
+      targetCard.classList.add("animation-end");
+      animationEnd(e);
+      setTimeout(() => targetCard.remove(), 400);
+    })
   );
 }
 
