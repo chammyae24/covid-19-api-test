@@ -55,10 +55,10 @@ function addData(country) {
 
   if (cardContainer.childElementCount > 0) {
     cardContainer.insertBefore(clone, cardContainer.firstChild);
-    animationStart();
+    setTimeout (()=> animationStart(), 300);
   } else {
     cardContainer.appendChild(clone);
-    animationStart();
+    setTimeout (()=> animationStart(), 300);
   }
 
   cardImg.src = `https://flagcdn.com/${country.CountryCode.toLowerCase()}.svg`;
