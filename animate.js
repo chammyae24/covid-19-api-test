@@ -2,6 +2,9 @@ function animationStart() {
   const animateStarts = document.querySelectorAll(".animation");
 
   animateStarts.forEach(anime => {
+    // anime.style.transform = "scale(0)";
+    // anime.style.transition = "transform 0.35s cubic-bezier(1,0,0,1) 0s";
+
     anime.style.transform = "scale(1)";
   });
 }
