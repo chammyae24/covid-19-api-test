@@ -14,7 +14,8 @@
     />
     <script src="./animate.js" defer></script>
     <style>
-      input[type="text"]:focus {
+      input[type="text"]:focus,
+      button:focus {
         border-color: #ffc107cc;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #ffc10799;
         outline: 0 none;
@@ -82,7 +83,9 @@
             <p class="card-text text-muted date"></p>
           </div>
         </div>
-        <button class="delete btn position-absolute top-0 end-0 m-2 bg-warning">
+        <button
+          class="delete btn btn-warning position-absolute top-0 end-0 m-2"
+        >
           X
         </button>
       </div>

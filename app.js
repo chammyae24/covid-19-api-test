@@ -14,30 +14,20 @@ function showCard(e) {
   e.preventDefault();
 
   const value = inputCountry.value.trim();
+  let newValue = new RegExp(`${value}`, "i");
 
-  fetch(`https://api.covid19api.com/summary`)
+  fetch("https://api.covid19api.com/summary")
     .then(res => res.json())
     .then(data => {
       const allCountries = data.Countries;
-      // const foundCountry = allCountries.find(
-      //   country =>
-      //     country.Country === value ||
-      //     country.Slug === value ||
-      //     country.CountryCode === value
-      // );
-      // if (!foundCountry) {
-      //   showError(value);
-      // } else {
-      //   addData(foundCountry);
-      // }
-      //-----
+
       const newData = allCountries.filter(
         country =>
-          country.Country.includes(value) ||
-          country.Slug.includes(value) ||
-          country.CountryCode.includes(value)
+          country.Country.match(newValue) ||
+          country.Slug.match(newValue) ||
+          country.CountryCode.match(newValue)
       );
-      // console.log(newData);
+
       if (newData.length > 0) {
         newData.forEach(country => addData(country));
       } else {
