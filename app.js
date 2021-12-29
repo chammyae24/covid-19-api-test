@@ -55,10 +55,10 @@ function addData(country) {
 
   if (cardContainer.childElementCount > 0) {
     cardContainer.insertBefore(clone, cardContainer.firstChild);
-    setTimeout(()=> animationStart(), 300);
+    setTimeout(()=> animationStart, 300);
   } else {
     cardContainer.appendChild(clone);
-    setTimeout(()=> animationStart(), 300);
+    setTimeout(()=> animationStart, 300);
   }
 
   cardImg.src = `https://flagcdn.com/${country.CountryCode.toLowerCase()}.svg`;
@@ -75,7 +75,7 @@ function addData(country) {
     btn.addEventListener("click", e => {
       const targetCard = e.target.parentElement;
       
-      targetCard.classList.add("animation-end");
+      //targetCard.classList.add("animation-end");
       animationEnd(e);
       setTimeout(() => targetCard.remove(), 400);
     })
