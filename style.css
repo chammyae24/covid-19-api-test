@@ -10,11 +10,14 @@ button:focus {
   outline: 0 none;
 }
 
+.card-container {
+  min-height: 444px;
+}
 .start {
-  animation: startanime 0.35s cubic-bezier(1, 0, 0, 1);
+  animation: startanime 0.35s cubic-bezier(0, -0.19, 0.2, 1.35);
 }
 .end {
-  animation: endanime 0.35s cubic-bezier(1, 0, 0, 1);
+  animation: endanime 0.35s cubic-bezier(0, -0.19, 0.2, 1.35);
 }
 
 @keyframes startanime {
