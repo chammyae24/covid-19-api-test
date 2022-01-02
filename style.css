@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+input[type="text"]:focus,
+button:focus {
+  border-color: rgba(255, 193, 7, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #ffc10799;
+  outline: 0 none;
+}
+
+.start {
+  animation: startanime 0.35s cubic-bezier(1, 0, 0, 1);
+}
+.end {
+  animation: endanime 0.35s cubic-bezier(1, 0, 0, 1);
+}
+
+@keyframes startanime {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes endanime {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
